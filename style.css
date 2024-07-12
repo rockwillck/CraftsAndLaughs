@@ -1,17 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 
-body {
-	font-family: 'Madimi One';
-	background-color: rgb(0, 0, 0);
+:root {
+	--main-color:#2e4b65;
+	--accent-color:#f69d5b;
 }
 
-.pino {
+body {
+	font-family: 'Madimi One';
+	background-color: var(--main-color);
+	color: var(--main-color);
+}
+
+.erry {
 	position: fixed;
-	bottom: -5px;
-	right: -5px;
+	bottom: -60px;
+	right: 10px;
+	transition: 0.2s;
+	border: none;
+	background-color: transparent;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	z-index: 3;
+}
+#jerryCherry {
 	width: max(24px, 40vw);
 	max-width: 200px;
 	filter: drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.408));
+}
+.erry:hover {
+	bottom:-40px;
+}
+.erry:active {
+	scale: 1.1;
+}
+@keyframes dialogBox {
+	0% {
+		margin-bottom: 30px;
+	}
+	50% {
+		margin-bottom: 40px;
+	}
+	100% {
+		margin-bottom: 30px;
+	}
+}
+.erry > p {
+	background-color: white;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	position: relative;
+	animation-name: dialogBox;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+.erry > p::after {
+	content: "▼";
+	position: absolute;
+	bottom: -1em;
+	color: white;
+	left: 50%;
+	translate: -50%;
 }
 .overlay {
 	position: absolute;
@@ -26,13 +77,20 @@ body {
 	overflow: hidden;
 }
 
+#logo {
+	height: 8vh;
+	top: 1vh;
+	left: 1vw;
+	border-radius: 15px;
+}
 .hero {
 	position: absolute;
 	font-size: max(12px, 7vmin);
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	width: 80%;
+	height: 80%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -40,63 +98,99 @@ body {
 	background-image: url("https://artparts.co/wp-content/uploads/2019/12/Crumpled-Paper.gif");
 	background-size:cover;
 	background-position: center;
+	border-radius: 5vmin;
+	box-shadow: inset 0 0 10px black;
+	text-align: center;
 }
 .hero > h1, .hero > p { 
 	margin: 0;
+	max-width: 80%;
 }
 .hero > h1 {
-	color: rgb(93, 184, 102);
+	color: var(--accent-color);
 	text-shadow: 2px 0px black, -2px 0px black, 0px 2px black, 0px -2px black, 2px 2px 0px black, -2px -2px 0px black;
+	text-align: center;
 }
 
 .content {
 	position: absolute;
 	top: 100vh;
-	left: 0;
-	width: 100vw;
+	left: 50%;
+	translate: -50% 0;
+	width: 80%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	font-size: max(12px, 5vmin);
-	padding: 10px;
+	align-items: start;
+	font-size: 30px;
 	box-sizing: border-box;
-	color: rgb(93, 184, 102);
+	color: var(--accent-color);
 	min-height:100vh;
-	padding-bottom: 60px;
+	padding-bottom: 300px;;
+}
+.content > h2 {
+	font-size: 60px;
+	border-bottom: solid 2px;
+	padding-bottom: 10px;
+}
+.content > p {
+	padding-left: 50px;
+	margin: 0;
+}
+@media (max-width:800px) {
+	.content > p {
+		padding-left: 0px;
+	}
 }
 
-.videos {
-	display: flex;
-	flex-wrap: wrap;
-	height: 80vh;
+.nav1 {
+	color: var(--accent-color);
+	margin: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+}
+.nav1 {
+	position: absolute;
+	left: 50%;
+	translate: -50% 0;
+	top: calc(6% - 1em);
+}
+a {
+	border-bottom: solid 2px;
+	color: var(--accent-color);
+	padding:5px;
+	transition: 0.2s;
+	margin: 0 10px 0 10px;
+	text-decoration: none;
+}
+a:hover {	
+	background-color: var(--accent-color);
+	color: var(--main-color);
+}
+.current {
+	border-bottom: dashed 2px;
 }
 
-iframe {
-	border-radius: 10px;
-	margin: 10px;
-	flex: 1;
-	min-width: min(400px, 40vw);
-}
-.socials {
-	display: flex;
-	flex-direction: row;
-}
-
-.social {
-	background-color: rgb(93, 184, 102);
-	color: black;
-	margin: 10px;
-	padding: 10px;
-	width: 50px;
-	height: 50px;
-	border-radius: 100vmin;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 15px;
-	box-sizing: border-box;
-}
-.social > img {
+#erryNav {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	background-color: var(--main-color);
 	width: 100%;
 	height: 100%;
+	transition: 1s;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+	font-size: 30px;
+	box-shadow: 0 0 100px rgb(0, 0, 0);
+}
+.links {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-direction: column;
 }
