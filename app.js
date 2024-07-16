@@ -9,7 +9,7 @@ window.onload = () => {
 	</button>
 	<div id="erryNav">
 		<div class="links" id="navLinks">
-			<a href="/">Home</a>
+			<a href="index.html">Home</a>
 			<a href="about.html">About Us</a>
 			<a href="volunteer.html">Volunteer</a>
 			<a href="chapter.html">Start a Chapter</a>
