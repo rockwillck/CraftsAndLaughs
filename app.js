@@ -1,7 +1,6 @@
 window.onload = () => {
     document.body.innerHTML += `
 	<div class="nav">
-		<img src="assets/icons/icon.png" id="logo">
 	</div>
     
     <button class="erry" onclick="bringNav()">
@@ -11,13 +10,13 @@ window.onload = () => {
 	<div id="erryNav">
 		<div class="links" id="navLinks">
 			<a href="/">Home</a>
-			<a href="comingsoon.html">About Us</a>
-			<a href="comingsoon.html">Volunteer</a>
-			<a href="comingsoon.html">Start a Chapter</a>
-			<a href="comingsoon.html">Tutorials</a>
-			<a href="comingsoon.html">Collaboration</a>
-			<a href="comingsoon.html">Contact Us</a>
-			<a href="comingsoon.html">Gallery</a>
+			<a href="about.html">About Us</a>
+			<a href="volunteer.html">Volunteer</a>
+			<a href="chapter.html">Start a Chapter</a>
+			<a href="tutorials.html">Tutorials</a>
+			<a href="collaborate.html">Collaboration</a>
+			<a href="contact.html">Contact Us</a>
+			<a href="gallery.html">Gallery</a>
 		</div>
 	</div>`
     document.getElementById("jerryCherry").src = ["assets/images/cherry.png","assets/images/jerry.png"][Math.random()<0.5?0:1]
