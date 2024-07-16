@@ -3,13 +3,14 @@
 :root {
 	--main-color:#2e4b65;
 	--accent-color:#f69d5b;
+	--light-color:#edb992;
 	--secondary-color:#BFD3E8;
 }
 
 body {
 	font-family: "Roboto Slab", serif;
-	background-color: var(--main-color);
-	color: var(--main-color);
+	background-color:var(--main-color);
+	color: var(--light-color);
 	font-size: 30px;
 }
 h2 {
@@ -66,6 +67,7 @@ h2 {
 }
 .erry > p {
 	background-color: white;
+	color: var(--main-color);
 	text-align: center;
 	padding: 10px;
 	box-sizing: border-box;
@@ -79,7 +81,7 @@ h2 {
 .erry > p::after {
 	content: "▼";
 	position: absolute;
-	bottom: -1em;
+	bottom: -0.9em;
 	color: white;
 	left: 50%;
 	translate: -50%;
@@ -170,18 +172,23 @@ h2 {
 	flex-direction: column;
 	align-items: start;
 	box-sizing: border-box;
-	color: var(--accent-color);
 	min-height:100vh;
 	padding-bottom: 300px;;
 }
 .content > h2 {
 	border-bottom: solid 2px;
 	padding-bottom: 10px;
+	color: var(--accent-color);
 }
 .content > :not(h2) {
 	margin: 0;
 	margin-left: 50px;
 	padding-left: 0;
+}
+.content > p {
+	padding-left: 20px !important;
+	position: relative;
+	border-left: solid 2px var(--secondary-color);
 }
 @media (max-width:800px) {
 	.content > :not(h2) {
@@ -192,7 +199,7 @@ h2 {
 
 a {
 	border-bottom: solid 2px;
-	color: var(--accent-color);
+	color: inherit;
 	padding:5px;
 	transition: 0.2s;
 	margin: 0 10px 0 10px;
