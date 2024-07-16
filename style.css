@@ -130,6 +130,7 @@ body {
 	.heroTitleInner{
 		align-items: center;
 		text-align: center;
+		padding-left: 0;
 	}
 	.heroTitleInner > h1, .heroTitleInner > p { 
 		justify-content: center;
