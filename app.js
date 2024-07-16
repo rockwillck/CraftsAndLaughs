@@ -1,9 +1,5 @@
 window.onload = () => {
-    document.body.innerHTML += `
-	<div class="nav">
-	</div>
-    
-    <button class="erry" onclick="bringNav()">
+    document.body.innerHTML += `<button class="erry" onclick="bringNav()">
 		<p id="dia">Press me to navigate!</p>
 		<img src="assets/images/cherry.png" alt="corner mascot" id="jerryCherry">
 	</button>
