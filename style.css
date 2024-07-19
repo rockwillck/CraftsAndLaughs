@@ -295,4 +295,24 @@ a:hover {
 .pfp {
 	max-width: 50%;
 	margin-left: 10px;
-	ma
+	margin-right: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+.profileDescription {
+	margin-bottom: 100px;
+}
+.profileDescription > p {
+	padding: 20px;
+	margin: 0;
+}
+
+mark {
+	background-color: var(--accent-color);
+	color: var(--main-color);
+	display: inline-block;
+	width: fit-content;
+}
+p > a {
+	padding: 0;
+	margin: 0;
+}
