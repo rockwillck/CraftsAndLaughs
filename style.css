@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 :root {
-	--main-color:#2e4b65;
+	--main-color:#1E3747;
 	--accent-color:#f69d5b;
 	--light-color:#edb992;
 	--secondary-color:#BFD3E8;
 }
 
+@font-face {
+	font-family: Roboto;
+	src: url(assets/fonts/RobotoSlab-VariableFont_wght.ttf);
+}
+
 body {
-	font-family: "Roboto Slab", serif;
+	font-family:"Roboto Slab", Roboto;
 	background-color:var(--main-color);
+	background-image: url("assets/images/scroll.png");
+	background-size: cover;
+	background-repeat: repeat-y;
+	background-position: 0 50vh;
 	color: var(--light-color);
 	font-size: 30px;
 }
@@ -175,6 +184,17 @@ h2 {
 	min-height:100vh;
 	padding-bottom: 300px;;
 }
+.content > * {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	backdrop-filter: blur(20px);
+	box-shadow: 0 10px 20px var(--main-color);
+	padding: 10px;
+}
+.content > a {
+	background-color: var(--main-color);
+	padding: 10px !important;
+}
 .content > h2 {
 	border-bottom: solid 2px;
 	padding-bottom: 10px;
@@ -275,20 +295,4 @@ a:hover {
 .pfp {
 	max-width: 50%;
 	margin-left: 10px;
-	margin-right: 10px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-}
-.profileDescription {
-	padding-bottom: 100px;
-}
-
-mark {
-	background-color: var(--accent-color);
-	color: var(--main-color);
-	display: inline-block;
-	width: fit-content;
-}
-p > a {
-	padding: 0;
-	margin: 0;
-}
+	ma
