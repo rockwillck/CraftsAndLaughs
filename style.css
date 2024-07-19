@@ -209,6 +209,7 @@ h2 {
 	padding-left: 20px !important;
 	position: relative;
 	border-left: solid 2px var(--secondary-color);
+	margin-bottom: 10px;
 }
 @media (max-width:800px) {
 	.content > :not(h2) {
@@ -316,3 +317,16 @@ p > a {
 	padding: 0;
 	margin: 0;
 }
+li {
+	padding-left: 20px
+}
+ol {
+	list-style: none;
+	counter-reset: item;
+}
+li:before { 
+	content: counter(item) ". ";
+	counter-increment: item;
+	width: 2em;
+	display: inline-block;
+  }
