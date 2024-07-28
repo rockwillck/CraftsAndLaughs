@@ -56,6 +56,7 @@ h2 {
 	width: max(24px, 40vw);
 	max-width: 200px;
 	filter: drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.408));
+	-webkit-filter: drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.408));
 }
 .erry:hover {
 	bottom:-40px;
@@ -154,6 +155,7 @@ h2 {
 		z-index: -1;
 		opacity: 0.2;
 		filter: blur(5px);
+		-webkit-filter: blur(5px);
 	}
 	.heroTitleInner{
 		align-items: center;
@@ -188,6 +190,7 @@ h2 {
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 	box-shadow: 0 10px 20px var(--main-color);
 	padding: 10px;
 }
