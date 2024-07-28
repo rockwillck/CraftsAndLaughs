@@ -18,7 +18,7 @@ window.onload = () => {
     document.getElementById("jerryCherry").src = ["assets/images/cherry.png","assets/images/jerry.png"][Math.random()<0.5?0:1]
 
     for(a of document.getElementById("navLinks").children) {
-        if(a.href == window.location) {
+        if(a.href.startsWith(window.location)) {
             a.className = "current"
         }
     }
