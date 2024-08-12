@@ -14,11 +14,14 @@ window.onload = () => {
 			<a href="contact.html">Contact Us</a>
 			<a href="gallery.html">Gallery</a>
 		</div>
+		<footer>
+		<small>Crafts & Laughs is fiscally sponsored by The Hack Foundation (d.b.a. Hack Club), a 501(c)(3) nonprofit (EIN: 81-2908499).</small>
+		</footer>
 	</div>`
     document.getElementById("jerryCherry").src = ["assets/images/cherry.png","assets/images/jerry.png"][Math.random()<0.5?0:1]
 
     for(a of document.getElementById("navLinks").children) {
-        if(a.href.startsWith(window.location)) {
+        if((a.href.startsWith(window.location) && window.location.pathname != "/") || (a.href.endsWith("index.html") && window.location.pathname == "/")) {
             a.className = "current"
         }
     }
