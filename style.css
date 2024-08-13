@@ -194,7 +194,7 @@ h2 {
 	box-shadow: 0 10px 20px var(--main-color);
 	padding: 10px;
 }
-.content > a {
+.content > a, button {
 	background-color: var(--main-color);
 	padding: 10px !important;
 }
@@ -221,15 +221,18 @@ h2 {
 	}
 }
 
-a {
+a, button {
+	border: none;
 	border-bottom: solid 2px;
 	color: inherit;
 	padding:5px;
 	transition: 0.2s;
 	margin: 0 10px 0 10px;
 	text-decoration: none;
+	font-family: inherit;
+	font-size: inherit;
 }
-a:hover {	
+a:hover, button:not(.erry):hover {	
 	background-color: var(--accent-color);
 	color: var(--main-color);
 }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Hello, world!</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="icon" href="">
+</head>
+<body>
+    <style>
+        svg {
+            width: 30px;
+            background-color: var(--light-color);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        a:has(svg) {
+            border: none;
+        }
+        a:has(svg):hover {
+            background-color: transparent;
+        }
+        .heroTitleInner {
+            font-size: 35px;
+        }
+        #tree {
+            font-size: inherit
+        }
+        #tree a {
+            font-size: inherit;
+        }
+        svg {
+            transition: 0.2s;
+        }
+        svg:hover {
+            rotate: 10deg;
+        }
+        #tree {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .heroTitleInner {
+            align-items: center;
+        }
+        #share {
+            margin: 10px;
+            background-color: var(--accent-color);
+            border: none;
+            font-family: inherit;
+            border-radius: 10px;
+            padding: 10px;
+            font-style: italic;
+            font-size: 15px;
+            text-transform: capitalize;
+            width: 100%;
+            margin-top: 20px;
+            border: solid;
+            border-color: var(--accent-color);
+            transition: 0.2s;
+            color: var(--main-color);
+        }
+        #share:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: solid;
+        }
+    </style>
+    <div class="hero">
+		<div class="bg"></div>
+		<div class="heroTitle">
+			<div class="heroTitleInner">
+                <div id="tree">
+                    <div id="btns"></div>
+                </div>
+                <button onclick="navigator.share({
+                    title: 'Crafts and Laughs',
+                    text: 'Healing, Handmade',
+                    url: 'https:\/\/craftsandlaughs.org/linkinbio.html'
+                   })" id="share">Share</button>
+			</div>
+		</div>
+	</div>
+    <script>
+        function makeHttpObject() {
+            try { return new XMLHttpRequest(); }
+            catch (error) { }
+            try { return new ActiveXObject("Msxml2.XMLHTTP"); }
+            catch (error) { }
+            try { return new ActiveXObject("Microsoft.XMLHTTP"); }
+            catch (error) { }
+
+            throw new Error("Could not create HTTP request object.");
+        }
+
+        function getAllLinks(htmlString) {
+            // Create a new DOM parser
+            const parser = new DOMParser();
+            // Parse the HTML string into a document
+            const doc = parser.parseFromString(htmlString, 'text/html');
+            // Get all <a> elements
+            const links = doc.querySelectorAll('a');
+            // Extract the href attribute from each <a> element
+            return Array.from(links).map(link => [link.href, link.innerHTML.includes("<svg") ? new DOMParser().parseFromString(link.innerHTML, 'text/html').querySelector('svg') : link.innerText])
+        }
+
+
+        var request = makeHttpObject();
+        request.open("GET", "https://corsproxy.io/?https://linktr.ee/Crafts.and.Laughs?utm_source=linktree_profile_share&ltsid=c128d298-ee86-44ef-bdee-a19c8e44c2fc", true);
+        request.send(null);
+        request.onreadystatechange = function () {
+            if (request.readyState == 4) {
+                for (l of getAllLinks(request.responseText)) {
+                    if (l[1].outerHTML != undefined) {
+                        document.getElementById("btns").innerHTML += `<a href=${l[0]}>${l[1].outerHTML}</a>`
+                    } else {
+                        document.getElementById("tree").innerHTML += `<a href=${l[0]}>${l[1]}</a>`
+                    }
+                }
+            }
+        };
+    </script>
+	<script src="app.js"></script>
+</body>
+</html>
