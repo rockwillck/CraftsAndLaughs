@@ -330,7 +330,7 @@ ol {
 	list-style: none;
 	counter-reset: item;
 }
-li:before { 
+ol > li:before { 
 	content: counter(item) ". ";
 	counter-increment: item;
 	width: 2em;
