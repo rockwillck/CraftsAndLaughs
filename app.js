@@ -16,6 +16,8 @@ window.onload = () => {
 		</div>
 		<footer>
 		<small>Crafts & Laughs is fiscally sponsored by The Hack Foundation (d.b.a. Hack Club), a 501(c)(3) nonprofit (EIN: 81-2908499).</small>
+		<br>
+		<small>Website made by <a href="https://rockwill.dev">William Choi-Kim</a>. © ${new Date().getFullYear()} Crafts & Laughs.</small>
 		</footer>
 	</div>`
     document.getElementById("jerryCherry").src = ["assets/images/cherry.png","assets/images/jerry.png"][Math.random()<0.5?0:1]

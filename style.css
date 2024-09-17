@@ -345,3 +345,14 @@ footer {
 	padding-right: 200px;
 	font-size: 15px;
 }
+
+small > a {
+	padding: 0;
+	margin: 0;
+}
+
+.tutorialFrame {
+	width: 700px;
+	height: 500px;
+	max-width: 100%;
+}
