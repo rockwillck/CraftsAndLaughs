@@ -352,7 +352,6 @@ small > a {
 }
 
 .tutorialFrame {
-	width: 700px;
-	height: 500px;
-	max-width: 100%;
+	width: 100%;
+	aspect-ratio: 1/0.5625;
 }
