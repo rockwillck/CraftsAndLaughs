@@ -353,5 +353,13 @@ small > a {
 
 .tutorialFrame {
 	width: 100%;
+	overflow: scroll;
+	padding: 0;
+}
+.tutorialLong {
+	height:56.25vh;
+}
+.tutorialPresentation {
+	width: 100%;
 	aspect-ratio: 1/0.5625;
 }
