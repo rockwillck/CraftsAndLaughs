@@ -355,6 +355,7 @@ small > a {
 	width: 100%;
 	overflow: scroll;
 	padding: 0;
+	margin-bottom: 25px !important;
 }
 .tutorialLong {
 	height:56.25vh;
