@@ -367,4 +367,26 @@ small > a {
 
 .imagesSlides {
 	display: flex;
+	scroll-behavior: smooth;
+}
+
+.slideControls {
+	width: 100%;
+	padding: 0;
+	translate: 0 -50px;
+	margin-bottom: 25px !important;
+	display: flex;
+}
+.leftRight {
+	flex: 1;
+	margin: 0;	
+	background-color: transparent;
+}
+.lrl {
+	left: 0;
+	margin-right: 5px;
+}
+.lrr {
+	right: 0;
+	margin-left: 5px;
 }
