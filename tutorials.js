@@ -1,4 +1,4 @@
-onload = () => {
+window.addEventListener("load", () => {
     for (let el of document.getElementsByClassName("imagesSlides")) {
         let leftButton = document.createElement("button")
         let rightButton = document.createElement("button")
@@ -33,3 +33,4 @@ onload = () => {
         }
     }
 }
+)
