@@ -352,7 +352,7 @@ small > a {
 }
 
 .tutorialFrame {
-	width: 100%;
+	max-width: 100%;
 	overflow: scroll;
 	padding: 0;
 	margin-bottom: 25px !important;
