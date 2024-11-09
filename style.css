@@ -371,22 +371,35 @@ small > a {
 }
 
 .slideControls {
+	position: relative;
 	width: 100%;
 	padding: 0;
-	translate: 0 -50px;
+	translate: 0 -25px;
 	margin-bottom: 25px !important;
-	display: flex;
+	background-color: transparent;
+	backdrop-filter: none;
+	box-shadow: none;
 }
 .leftRight {
-	flex: 1;
-	margin: 0;	
-	background-color: transparent;
+	position: absolute;
+	margin: 10px;	
+	background-color: rgba(255, 255, 255, 0.1);
+	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+	backdrop-filter: blur(10px);
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 0;
+	border-radius: 100vmin;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: monospace;
 }
 .lrl {
 	left: 0;
-	margin-right: 5px;
 }
 .lrr {
-	right: 0;
-	margin-left: 5px;
+	left: 70px;
 }
