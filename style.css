@@ -358,7 +358,7 @@ small > a {
 	margin-bottom: 25px !important;
 }
 .tutorialLong {
-	height:56.25vh;
+	max-height:36.25vw;
 }
 .tutorialPresentation {
 	width: 100%;
