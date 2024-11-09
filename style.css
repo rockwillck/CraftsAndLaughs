@@ -358,21 +358,17 @@ small > a {
 	margin-bottom: 25px !important;
 }
 .tutorialLong {
-	max-height:36.25vw;
-}
-.tutorialPresentation {
-	width: 100%;
 	aspect-ratio: 1/0.5625;
 }
 
 .imagesSlides {
 	position: relative;
 	overflow-x: scroll;
-	overflow-y: hidden;
 	white-space: nowrap;
 	scroll-behavior: smooth;
 	padding: 0;
 	box-sizing: border-box;
+	font-size: 0;
 }
 .imagesSlides > img {
 	height: 100%;
