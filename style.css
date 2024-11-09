@@ -366,8 +366,18 @@ small > a {
 }
 
 .imagesSlides {
-	display: flex;
+	position: relative;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
 	scroll-behavior: smooth;
+	padding: 0;
+	box-sizing: border-box;
+}
+.imagesSlides > img {
+	height: 100%;
+	display: inline;
+	box-sizing: border-box;
 }
 
 .slideControls {

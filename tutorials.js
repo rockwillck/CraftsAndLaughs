@@ -13,10 +13,23 @@ onload = () => {
         el.after(row)
     
         leftButton.onclick = () => {
-            el.scrollLeft -= el.children[0].getBoundingClientRect().width
+            let lastOneBefore = el.children[0]
+            for (let i of el.getElementsByTagName("img")) {
+                if (i.getBoundingClientRect().left < 0) {
+                    lastOneBefore = i
+                } else {
+                    break
+                }
+            }
+            lastOneBefore.scrollIntoView({block: "nearest", inline: "nearest"});
         }
         rightButton.onclick = () => {
-            el.scrollLeft += el.children[0].getBoundingClientRect().width
+            for (let e of el.getElementsByTagName("img")) {
+                if (e.offsetLeft > el.scrollLeft) {
+                    e.scrollIntoView({block: "nearest", inline: "start"});
+                    break
+                }
+            }
         }
     }
 }
